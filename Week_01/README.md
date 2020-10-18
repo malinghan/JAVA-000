@@ -23,7 +23,7 @@
 
 ##### 解
 
-- [HelloClassLoader](/HelloClassLoader.java)
+- [HelloClassLoader](blob/main/HelloClassLoader.java)
 
 
 #### 作业3(必)
