@@ -23,7 +23,7 @@
 
 ##### 解
 
-- [HelloClassLoader](JAVA-000/Week_01/HelloClassLoader.java)
+- [HelloClassLoader](/HelloClassLoader.java)
 
 
 #### 作业3(必)
@@ -32,7 +32,7 @@
 
 ##### 解
 
-![JVM参数结构图](Week_01/JVM参数结构图.png)
+![JVM参数结构图](/JVM参数结构图.png)
 
 - Xmx 最大Heap的大小，默认为物理内存的1/4
 - Xms 初始的Heap的大小 (在很多情况下，-Xms和-Xmx设置成一样的。这么设置，是因为当Heap不够用时，如果不一致，会发生内存抖动，影响程序运行稳定性。)
