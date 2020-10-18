@@ -17,20 +17,33 @@
 分析:
 
 #### 作业2(必)
-
-自定义一个Classloader,加载一个Hello.xlaas文件，执行hello文件，此文件是一个Hello.ckass
+##### 题
+自定义一个Classloader,加载一个Hello.xlaas文件，执行hello文件，此文件是一个Hello.class
 文件所有字节处理后的文件。
 
-#### 作业3(必)
+##### 解
 
+- [HelloClassLoader](JAVA-000/Week_01/HelloClassLoader.java)
+
+
+#### 作业3(必)
+##### 题
 画一张图,展示Xmx、Xms、Xmn、Meta、DirectMemory、Xss这些内存参数的关系
 
-- Xmx 堆内存的最大大小，默认为物理内存的1/4
-- Xms 堆内存的最小大小，默认为物理内存的1/64
-- Xms 堆内新生代的大小 通过这个值也可以得到老生代的大小：-Xmx减去-Xmn
-- Meta
-- DirectMemory
+##### 解
+
+![JVM参数结构图](Week_01/JVM参数结构图.png)
+
+- Xmx 最大Heap的大小，默认为物理内存的1/4
+- Xms 初始的Heap的大小 (在很多情况下，-Xms和-Xmx设置成一样的。这么设置，是因为当Heap不够用时，如果不一致，会发生内存抖动，影响程序运行稳定性。)
+- Xmn 年轻代大小 通过这个值也可以得到老生代的大小：-Xmx减去-Xmn
+- Meta metaspace大小
+- DirectMemory 堆外内存大小
 - Xss 设置每个线程可使用的内存大小，即栈的大小。
+
+https://yq.aliyun.com/articles/268842
+
+
 
 > Xss: 在相同物理内存下，减小这个值能生成更多的线程，当然操作系统对一个进程内的线程数还是有限制的，不能无限生成。
 > 线程栈的大小是个双刃剑，如果设置过小，可能会出现栈溢出，特别是在该线程内有递归、大的循环时出现溢出的可能性更大，
