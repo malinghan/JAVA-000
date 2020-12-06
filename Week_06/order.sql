@@ -4,6 +4,9 @@
 
 CREATE SCHEMA IF NOT EXISTS demo_ds;
 
+use demo_ds;
+
+
 # order
 
 CREATE TABLE IF NOT EXISTS t_order
@@ -21,7 +24,8 @@ CREATE TABLE IF NOT EXISTS t_order
 CREATE TABLE IF NOT EXISTS t_order_item
   (
    order_item_id BIGINT AUTO_INCREMENT comment '订单产品id',
-   order_id BIGINT, user_id INT NOT NULL comment '订单id',
+   order_id BIGINT comment '订单id',
+   user_id INT NOT NULL comment '用户id',
    status VARCHAR(50) ,
    PRIMARY KEY (order_item_id)
    )
