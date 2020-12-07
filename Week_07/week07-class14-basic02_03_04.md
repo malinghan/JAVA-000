@@ -6,6 +6,20 @@
 
 ## 解题报告
 
+1. 如何使用Mybatis+spring实现多数据源切换的demo，参考一下
+
+
+https://www.jianshu.com/p/7f1b785cd986
+
+2. 如何使用Mybatis+shardingsphere实现多数据源切换的demo，参考一下
+
+https://www.jianshu.com/p/133bfd099afb
+
+3. 如何使用Mybatis+shardingsphere proxy实现多数据源切换的demo，参考一下
+
+
+
+
 ### (2)
 
 ### (3)
