@@ -15,10 +15,11 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core.repository;
+package com.someecho.jdbc.demo.repository;
 
+import com.someecho.jdbc.demo.core.repository.OrderItemRepository;
+import org.apache.ibatis.annotations.Mapper;
 
-import com.someecho.jdbc.demo.entity.User;
-
-public interface UserRepository extends CommonRepository<User, Long> {
+@Mapper
+public interface MybatisOrderItemRepository extends OrderItemRepository {
 }

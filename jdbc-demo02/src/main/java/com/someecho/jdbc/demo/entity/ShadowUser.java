@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core.entity;
+package com.someecho.jdbc.demo.entity;
 
 import java.io.Serializable;
 

@@ -15,28 +15,26 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core;
+package com.someecho.jdbc.demo.repository;
 
-import com.zaxxer.hikari.HikariDataSource;
+import com.someecho.jdbc.demo.entity.ShadowUser;
+import com.someecho.jdbc.demo.core.repository.ShadowUserRepository;
+import org.apache.ibatis.annotations.Mapper;
 
-import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-public final class DataSourceUtil {
+@Mapper
+public interface MybatisShadowUserRepository extends ShadowUserRepository {
     
-    private static final String HOST = "http://49.233.41.175/";
-    
-    private static final int PORT = 3306;
-    
-    private static final String USER_NAME = "root";
-    
-    private static final String PASSWORD = "123456";
-    
-    public static DataSource createDataSource(final String dataSourceName) {
-        HikariDataSource result = new HikariDataSource();
-        result.setDriverClassName("com.mysql.jdbc.Driver");
-        result.setJdbcUrl(String.format("jdbc:mysql://%s:%s/%s?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8", HOST, PORT, dataSourceName));
-        result.setUsername(USER_NAME);
-        result.setPassword(PASSWORD);
+    @Override
+    default List<ShadowUser> selectAll() throws SQLException {
+        List<ShadowUser> result = new ArrayList<>();
+        result.addAll(selectAllByShadow(true));
+        result.addAll(selectAllByShadow(false));
         return result;
     }
+    
+    List<ShadowUser> selectAllByShadow(boolean shadow) throws SQLException;
 }

@@ -18,7 +18,7 @@
 package com.someecho.jdbc.demo.service;
 
 import com.someecho.jdbc.demo.ExampleService;
-import com.someecho.jdbc.demo.core.entity.User;
+import com.someecho.jdbc.demo.entity.User;
 import com.someecho.jdbc.demo.core.repository.UserRepository;
 import org.springframework.stereotype.Service;
 

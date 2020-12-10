@@ -15,31 +15,10 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core;
+package com.someecho.jdbc.demo.core.repository;
 
 
+import com.someecho.jdbc.demo.entity.User;
 
-import com.someecho.jdbc.demo.ExampleService;
-
-import java.sql.SQLException;
-
-public final class ExampleExecuteTemplate {
-
-    public static void run(final ExampleService exampleService) throws SQLException {
-        try {
-            exampleService.initEnvironment();
-            exampleService.processSuccess();
-        } finally {
-            exampleService.cleanEnvironment();
-        }
-    }
-
-    public static void runFailure(final ExampleService exampleService) throws SQLException {
-        try {
-            exampleService.initEnvironment();
-            exampleService.processFailure();
-        } finally {
-            exampleService.cleanEnvironment();
-        }
-    }
+public interface UserRepository extends CommonRepository<User, Long> {
 }

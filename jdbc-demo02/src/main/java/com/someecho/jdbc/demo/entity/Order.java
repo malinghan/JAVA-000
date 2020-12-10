@@ -15,29 +15,21 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core.entity;
+package com.someecho.jdbc.demo.entity;
 
 import java.io.Serializable;
 
-public class OrderItem implements Serializable {
+public class Order implements Serializable {
     
-    private static final long serialVersionUID = 263434701950670170L;
-    
-    private long orderItemId;
+    private static final long serialVersionUID = 661434701950670670L;
     
     private long orderId;
     
     private int userId;
     
+    private long addressId;
+    
     private String status;
-    
-    public long getOrderItemId() {
-        return orderItemId;
-    }
-    
-    public void setOrderItemId(final long orderItemId) {
-        this.orderItemId = orderItemId;
-    }
     
     public long getOrderId() {
         return orderId;
@@ -63,8 +55,16 @@ public class OrderItem implements Serializable {
         this.status = status;
     }
     
+    public long getAddressId() {
+        return addressId;
+    }
+    
+    public void setAddressId(final long addressId) {
+        this.addressId = addressId;
+    }
+    
     @Override
     public String toString() {
-        return String.format("order_item_id:%s, order_id: %s, user_id: %s, status: %s", orderItemId, orderId, userId, status);
+        return String.format("order_id: %s, user_id: %s, address_id: %s, status: %s", orderId, userId, addressId, status);
     }
 }

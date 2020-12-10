@@ -17,7 +17,7 @@
 
 package com.someecho.jdbc.demo.repository;
 
-import com.someecho.jdbc.demo.core.entity.ShadowUser;
+import com.someecho.jdbc.demo.entity.ShadowUser;
 import com.someecho.jdbc.demo.core.repository.ShadowUserRepository;
 import org.apache.ibatis.annotations.Mapper;
 

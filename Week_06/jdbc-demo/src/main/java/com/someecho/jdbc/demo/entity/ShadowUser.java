@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core.entity;
+package com.someecho.jdbc.demo.entity;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class ShadowUser implements Serializable {
     
     private static final long serialVersionUID = 263434701950670170L;
     
@@ -27,9 +27,13 @@ public class User implements Serializable {
     
     private String userName;
     
+    private String userNamePlain;
+    
     private String pwd;
     
     private String assistedQueryPwd;
+    
+    private boolean shadow;
     
     public int getUserId() {
         return userId;
@@ -45,6 +49,14 @@ public class User implements Serializable {
     
     public void setUserName(final String userName) {
         this.userName = userName;
+    }
+    
+    public String getUserNamePlain() {
+        return userNamePlain;
+    }
+    
+    public void setUserNamePlain(final String userNamePlain) {
+        this.userNamePlain = userNamePlain;
     }
     
     public String getPwd() {
@@ -63,8 +75,16 @@ public class User implements Serializable {
         this.assistedQueryPwd = assistedQueryPwd;
     }
     
+    public boolean isShadow() {
+        return shadow;
+    }
+    
+    public void setShadow(final boolean shadow) {
+        this.shadow = shadow;
+    }
+    
     @Override
     public String toString() {
-        return String.format("user_id: %d, user_name: %s, pwd: %s", userId, userName, pwd);
+        return String.format("user_id: %d, user_name: %s, user_name_plain: %s, pwd: %s, assisted_query_pwd: %s, shadow: %s", userId, userName, userNamePlain, pwd, assistedQueryPwd, shadow);
     }
 }

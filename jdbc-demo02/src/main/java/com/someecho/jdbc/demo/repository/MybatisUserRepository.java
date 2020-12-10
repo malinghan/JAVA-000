@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.core.repository;
+package com.someecho.jdbc.demo.repository;
 
 
-import com.someecho.jdbc.demo.entity.User;
+import com.someecho.jdbc.demo.core.repository.UserRepository;
 
-public interface UserRepository extends CommonRepository<User, Long> {
+public interface MybatisUserRepository extends UserRepository {
 }

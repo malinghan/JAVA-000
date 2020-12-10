@@ -18,9 +18,9 @@
 package com.someecho.jdbc.demo.service;
 
 import com.someecho.jdbc.demo.ExampleService;
-import com.someecho.jdbc.demo.core.entity.Address;
-import com.someecho.jdbc.demo.core.entity.Order;
-import com.someecho.jdbc.demo.core.entity.OrderItem;
+import com.someecho.jdbc.demo.entity.Address;
+import com.someecho.jdbc.demo.entity.Order;
+import com.someecho.jdbc.demo.entity.OrderItem;
 import com.someecho.jdbc.demo.core.repository.AddressRepository;
 import com.someecho.jdbc.demo.core.repository.OrderItemRepository;
 import com.someecho.jdbc.demo.core.repository.OrderRepository;

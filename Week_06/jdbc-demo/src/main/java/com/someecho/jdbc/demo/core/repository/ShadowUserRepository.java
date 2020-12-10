@@ -18,7 +18,7 @@
 package com.someecho.jdbc.demo.core.repository;
 
 
-import com.someecho.jdbc.demo.core.entity.ShadowUser;
+import com.someecho.jdbc.demo.entity.ShadowUser;
 
 public interface ShadowUserRepository extends CommonRepository<ShadowUser, Long> {
 }
