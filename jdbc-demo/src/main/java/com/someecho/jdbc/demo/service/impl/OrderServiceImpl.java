@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.someecho.jdbc.demo.service;
+package com.someecho.jdbc.demo.service.impl;
 
 import com.someecho.jdbc.demo.ExampleService;
 import com.someecho.jdbc.demo.entity.Address;
@@ -24,6 +24,7 @@ import com.someecho.jdbc.demo.entity.OrderItem;
 import com.someecho.jdbc.demo.core.repository.AddressRepository;
 import com.someecho.jdbc.demo.core.repository.OrderItemRepository;
 import com.someecho.jdbc.demo.core.repository.OrderRepository;
+import com.someecho.jdbc.demo.service.IOrderService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +36,7 @@ import java.util.List;
 
 @Service
 @Primary
-public class OrderServiceImpl implements ExampleService {
+public class OrderServiceImpl implements ExampleService,IOrderService {
     
     @Resource
     private OrderRepository orderRepository;
@@ -48,13 +49,26 @@ public class OrderServiceImpl implements ExampleService {
 
     @Override
     public void initEnvironment() throws SQLException {
+        //创建表
         orderRepository.createTableIfNotExists();
         orderItemRepository.createTableIfNotExists();
+        
+        //清空表
         orderRepository.truncateTable();
         orderItemRepository.truncateTable();
+        
+        //初始化地址表
         initAddressTable();
     }
     
+    
+    /**
+     * 初始化地址表
+     * 1. 创建表
+     * 2. 清空表数据
+     * 3. 初始化10条数据
+     * @throws SQLException
+     */
     private void initAddressTable() throws SQLException {
         addressRepository.createTableIfNotExists();
         addressRepository.truncateTable();
@@ -65,13 +79,25 @@ public class OrderServiceImpl implements ExampleService {
             addressRepository.insert(entity);
         }
     }
-
+    
+    
+    /**
+     * 删除表
+     * @throws SQLException
+     */
     @Override
     public void cleanEnvironment() throws SQLException {
         orderRepository.dropTable();
         orderItemRepository.dropTable();
     }
     
+    /**
+     * 1. 插入数据
+     * 2. 查询数据
+     * 3. 删除数据
+     * 4. 查询数据
+     * @throws SQLException
+     */
     @Override
     @Transactional
     public void processSuccess() throws SQLException {
@@ -83,6 +109,12 @@ public class OrderServiceImpl implements ExampleService {
         System.out.println("-------------- Process Success Finish --------------");
     }
     
+    
+    /**
+     * 1. 插入数据
+     * 2. 报错
+     * @throws SQLException
+     */
     @Override
     @Transactional
     public void processFailure() throws SQLException {
@@ -91,7 +123,13 @@ public class OrderServiceImpl implements ExampleService {
         System.out.println("-------------- Process Failure Finish --------------");
         throw new RuntimeException("Exception occur for transaction test.");
     }
-
+    
+    
+    /**
+     * 插入数据的方法
+     * @return
+     * @throws SQLException
+     */
     private List<Long> insertData() throws SQLException {
         System.out.println("---------------------------- Insert Data ----------------------------");
         List<Long> result = new ArrayList<>(10);
@@ -113,7 +151,12 @@ public class OrderServiceImpl implements ExampleService {
         }
         return result;
     }
-
+    
+    /**
+     * 删除数据
+     * @param orderIds
+     * @throws SQLException
+     */
     private void deleteData(final List<Long> orderIds) throws SQLException {
         System.out.println("---------------------------- Delete Data ----------------------------");
         for (Long each : orderIds) {
@@ -122,6 +165,10 @@ public class OrderServiceImpl implements ExampleService {
         }
     }
     
+    /**
+     * 查询数据
+     * @throws SQLException
+     */
     @Override
     public void printData() throws SQLException {
         System.out.println("---------------------------- Print Order Data -----------------------");
