@@ -23,7 +23,8 @@ public class RpcfxInvoker {
         String serviceClass = request.getServiceClass();
 
         // 作业1：改成泛型和反射
-        Object service = resolver.resolve(serviceClass);//this.applicationContext.getBean(serviceClass);
+        Object service = resolver.resolve(serviceClass);
+        //this.applicationContext.getBean(serviceClass);
 
         try {
             Method method = resolveMethodFromClass(service.getClass(), request.getMethod());
@@ -33,11 +34,6 @@ public class RpcfxInvoker {
             response.setStatus(true);
             return response;
         } catch ( IllegalAccessException | InvocationTargetException e) {
-
-            // 3.Xstream
-
-            // 2.封装一个统一的RpcfxException
-            // 客户端也需要判断异常
             e.printStackTrace();
             response.setException(e);
             response.setStatus(false);

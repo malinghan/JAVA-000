@@ -15,15 +15,15 @@ public class RpcfxResponse {
     public void setResult(Object result) {
         this.result = result;
     }
-
-    public boolean isStatus() {
+    
+    public boolean getStatus() {
         return status;
     }
-
-    public void setStatus(boolean status) {
+    
+    public void setStatus(final boolean status) {
         this.status = status;
     }
-
+    
     public Exception getException() {
         return exception;
     }
