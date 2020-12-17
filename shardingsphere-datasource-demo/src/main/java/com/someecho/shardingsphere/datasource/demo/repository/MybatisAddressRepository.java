@@ -15,31 +15,11 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.entity;
+package com.someecho.shardingsphere.datasource.demo.repository;
 
-import java.io.Serializable;
+import com.someecho.shardingsphere.datasource.demo.entity.Address;
+import org.apache.ibatis.annotations.Mapper;
 
-public class Address implements Serializable {
-    
-    private static final long serialVersionUID = 661434701950670670L;
-    
-    private Long addressId;
-    
-    private String addressName;
-    
-    public Long getAddressId() {
-        return addressId;
-    }
-    
-    public void setAddressId(final Long addressId) {
-        this.addressId = addressId;
-    }
-    
-    public String getAddressName() {
-        return addressName;
-    }
-    
-    public void setAddressName(final String addressName) {
-        this.addressName = addressName;
-    }
+@Mapper
+public interface MybatisAddressRepository  extends CommonRepository<Address, Long> {
 }

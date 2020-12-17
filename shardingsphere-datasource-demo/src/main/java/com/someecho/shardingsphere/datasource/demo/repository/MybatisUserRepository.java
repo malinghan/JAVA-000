@@ -15,11 +15,10 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.repository;
+package com.someecho.shardingsphere.datasource.demo.repository;
 
-import com.someecho.dynamic.datasource.demo.entity.Address;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface MybatisAddressRepository  extends CommonRepository<Address, Long> {
+import com.someecho.shardingsphere.datasource.demo.entity.User;
+
+public interface MybatisUserRepository extends CommonRepository<User,Long> {
 }

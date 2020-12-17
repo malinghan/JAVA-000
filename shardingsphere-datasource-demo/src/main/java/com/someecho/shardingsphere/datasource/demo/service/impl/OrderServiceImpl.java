@@ -1,9 +1,12 @@
-package com.someeecho.shardingsphere.datasource.demo.service.impl;
+package com.someecho.shardingsphere.datasource.demo.service.impl;
 
-import com.someecho.dynamic.datasource.demo.repository.MybatisAddressRepository;
-import com.someecho.dynamic.datasource.demo.repository.MybatisOrderItemRepository;
-import com.someecho.dynamic.datasource.demo.repository.MybatisOrderRepository;
-import com.someecho.dynamic.datasource.demo.service.IOrderService;
+import com.someecho.shardingsphere.datasource.demo.entity.Address;
+import com.someecho.shardingsphere.datasource.demo.entity.Order;
+import com.someecho.shardingsphere.datasource.demo.entity.OrderItem;
+import com.someecho.shardingsphere.datasource.demo.repository.MybatisAddressRepository;
+import com.someecho.shardingsphere.datasource.demo.repository.MybatisOrderItemRepository;
+import com.someecho.shardingsphere.datasource.demo.repository.MybatisOrderRepository;
+import com.someecho.shardingsphere.datasource.demo.service.IOrderService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

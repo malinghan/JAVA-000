@@ -15,56 +15,62 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.repository;
+package com.someecho.shardingsphere.datasource.demo.repository;
+
+import com.someecho.shardingsphere.datasource.demo.entity.Order;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface CommonRepository<T, P> {
+@Mapper
+public interface MybatisOrderRepository{
+    
+    List<Order> selectLimit();
     
     /**
      * Create table if not exist.
-     * 
+     *
      * @throws SQLException SQL exception
      */
     void createTableIfNotExists();
     
     /**
      * Drop table.
-     * 
+     *
      * @throws SQLException SQL exception
      */
     void dropTable();
     
     /**
      * Truncate table.
-     * 
+     *
      * @throws SQLException SQL exception
      */
     void truncateTable();
     
     /**
      * insert data.
-     * 
+     *
      * @param entity entity
      * @return generated primary key
      * @throws SQLException SQL exception
      */
-    P insert(T entity);
+    void insert(Order entity);
     
     /**
      * Delete data.
-     * 
+     *
      * @param primaryKey primaryKey
      * @throws SQLException SQL exception
      */
-    void delete(P primaryKey);
+    void delete(Long primaryKey);
     
     /**
      * Select all data.
-     * 
+     *
      * @return all data
      * @throws SQLException SQL exception
      */
-    List<T> selectAll();
+    List<Order> selectAll();
 }

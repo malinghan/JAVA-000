@@ -15,37 +15,21 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.entity;
+package com.someecho.shardingsphere.datasource.demo.entity;
 
 import java.io.Serializable;
 
-public class OrderItem implements Serializable {
+public class User implements Serializable {
     
     private static final long serialVersionUID = 263434701950670170L;
     
-    private long orderItemId;
-    
-    private long orderId;
-    
     private int userId;
     
-    private String status;
+    private String userName;
     
-    public long getOrderItemId() {
-        return orderItemId;
-    }
+    private String pwd;
     
-    public void setOrderItemId(final long orderItemId) {
-        this.orderItemId = orderItemId;
-    }
-    
-    public long getOrderId() {
-        return orderId;
-    }
-    
-    public void setOrderId(final long orderId) {
-        this.orderId = orderId;
-    }
+    private String assistedQueryPwd;
     
     public int getUserId() {
         return userId;
@@ -55,16 +39,32 @@ public class OrderItem implements Serializable {
         this.userId = userId;
     }
     
-    public String getStatus() {
-        return status;
+    public String getUserName() {
+        return userName;
     }
     
-    public void setStatus(final String status) {
-        this.status = status;
+    public void setUserName(final String userName) {
+        this.userName = userName;
+    }
+    
+    public String getPwd() {
+        return pwd;
+    }
+    
+    public void setPwd(final String pwd) {
+        this.pwd = pwd;
+    }
+    
+    public String getAssistedQueryPwd() {
+        return assistedQueryPwd;
+    }
+    
+    public void setAssistedQueryPwd(final String assistedQueryPwd) {
+        this.assistedQueryPwd = assistedQueryPwd;
     }
     
     @Override
     public String toString() {
-        return String.format("order_item_id:%s, order_id: %s, user_id: %s, status: %s", orderItemId, orderId, userId, status);
+        return String.format("user_id: %d, user_name: %s, pwd: %s", userId, userName, pwd);
     }
 }

@@ -15,10 +15,24 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.repository;
+package com.someecho.shardingsphere.datasource.demo.repository;
 
+import com.someecho.shardingsphere.datasource.demo.entity.ShadowUser;
+import org.apache.ibatis.annotations.Mapper;
 
-import com.someecho.dynamic.datasource.demo.entity.User;
+import java.util.ArrayList;
+import java.util.List;
 
-public interface MybatisUserRepository extends CommonRepository<User,Long> {
+@Mapper
+public interface MybatisShadowUserRepository extends CommonRepository<ShadowUser, Long> {
+    
+    @Override
+    default List<ShadowUser> selectAll(){
+        List<ShadowUser> result = new ArrayList<>();
+        result.addAll(selectAllByShadow(true));
+        result.addAll(selectAllByShadow(false));
+        return result;
+    }
+    
+    List<ShadowUser> selectAllByShadow(boolean shadow);
 }

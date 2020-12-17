@@ -1,4 +1,4 @@
-package com.someeecho.shardingsphere.datasource.demo;
+package com.someecho.shardingsphere.datasource.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

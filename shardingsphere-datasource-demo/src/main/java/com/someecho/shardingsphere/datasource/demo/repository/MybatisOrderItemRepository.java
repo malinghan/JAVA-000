@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.repository;
+package com.someecho.shardingsphere.datasource.demo.repository;
 
-import com.someecho.dynamic.datasource.demo.entity.OrderItem;
+import com.someecho.shardingsphere.datasource.demo.entity.OrderItem;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

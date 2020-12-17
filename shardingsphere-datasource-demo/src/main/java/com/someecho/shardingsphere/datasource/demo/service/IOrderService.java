@@ -1,6 +1,6 @@
-package com.someeecho.shardingsphere.datasource.demo.service;
+package com.someecho.shardingsphere.datasource.demo.service;
 
-import com.someecho.dynamic.datasource.demo.entity.Order;
+import com.someecho.shardingsphere.datasource.demo.entity.Order;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.someeecho.shardingsphere.datasource.demo.entity;
+package com.someecho.shardingsphere.datasource.demo.entity;
 
 import java.io.Serializable;
 
