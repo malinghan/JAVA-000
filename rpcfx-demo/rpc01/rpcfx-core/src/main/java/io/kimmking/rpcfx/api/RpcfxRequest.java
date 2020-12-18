@@ -1,14 +1,14 @@
 package io.kimmking.rpcfx.api;
 
 public class RpcfxRequest {
-
-  private String serviceClass;
-
-  private String method;
- 
-  private Object[] params;
     
-
+    private String serviceClass;
+    
+    private String method;
+    
+    private Object[] params;
+    
+    
     public String getServiceClass() {
         return serviceClass;
     }

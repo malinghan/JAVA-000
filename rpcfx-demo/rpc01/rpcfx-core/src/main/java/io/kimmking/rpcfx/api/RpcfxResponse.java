@@ -1,17 +1,17 @@
 package io.kimmking.rpcfx.api;
 
 public class RpcfxResponse {
-
+    
     private Object result;
-
+    
     private boolean status;
-
+    
     private Exception exception;
-
+    
     public Object getResult() {
         return result;
     }
-
+    
     public void setResult(Object result) {
         this.result = result;
     }
@@ -27,7 +27,7 @@ public class RpcfxResponse {
     public Exception getException() {
         return exception;
     }
-
+    
     public void setException(Exception exception) {
         this.exception = exception;
     }

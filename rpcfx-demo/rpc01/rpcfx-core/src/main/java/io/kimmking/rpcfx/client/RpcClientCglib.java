@@ -18,11 +18,9 @@ public class RpcClientCglib implements RpcClient {
     
     @Override
     public <T> T create(final Class<T> serviceClass, final String url, final Filter... filters) {
-        Enhancer enhancer = new Enhancer();
-        enhancer.setCallback(new RpcInvocationByteCodeHandler(serviceClass, url));
+        Enhancer enhancer = new Enhancer(); enhancer.setCallback(new RpcInvocationByteCodeHandler(serviceClass, url));
         //父类为serviceClass
-        enhancer.setSuperclass(serviceClass);
-        log.info("client cglib proxy instance create and return");
+        enhancer.setSuperclass(serviceClass); log.info("client cglib proxy instance create and return");
         return (T) enhancer.create();
     }
     

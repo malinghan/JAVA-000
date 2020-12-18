@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author : linghan.ma
  * @Package io.kimmking.rpcfx.client
  * @Description: rpc的缓存池
+ * 复用客户端通过jdk或者cglib生成的代理对象
  * @date Date : 2020年12月18日 4:37 AM
  **/
 public class RpcProxy {

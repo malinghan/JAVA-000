@@ -30,11 +30,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class RpcEncoder extends MessageToByteEncoder<RpcProtocol> {
-
+    
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, RpcProtocol msg, ByteBuf out) throws Exception {
-        log.info("Netty rpc encode run");
-        out.writeInt(msg.getLen());
-        out.writeBytes(msg.getContent());
+        log.info("Netty rpc encode run"); out.writeInt(msg.getLen()); out.writeBytes(msg.getContent());
     }
 }

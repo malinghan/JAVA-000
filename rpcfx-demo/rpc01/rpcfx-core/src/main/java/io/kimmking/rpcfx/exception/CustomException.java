@@ -22,7 +22,6 @@ public class CustomException extends RuntimeException {
     }
     
     public CustomException(String message) {
-        super(message);
-        this.message = message;
+        super(message); this.message = message;
     }
 }
