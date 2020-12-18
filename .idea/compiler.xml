@@ -13,7 +13,9 @@
         <module name="rpcfx-core" />
         <module name="rpcfx-demo-api" />
         <module name="rpcfx-demo-consumer" />
+        <module name="rpcfx-demo-nettyserver" />
         <module name="rpcfx-demo-provider" />
+        <module name="rpcfx-demo-provider (1)" />
         <module name="shardingsphere-datasource-demo" />
       </profile>
     </annotationProcessing>
@@ -30,7 +32,11 @@
       <module name="rpcfx-core" target="1.8" />
       <module name="rpcfx-demo-api" target="1.8" />
       <module name="rpcfx-demo-consumer" target="8" />
+      <module name="rpcfx-demo-netty-provider" target="8" />
+      <module name="rpcfx-demo-nettyserver" target="1.8" />
       <module name="rpcfx-demo-provider" target="8" />
+      <module name="rpcfx-demo-provider (1)" target="8" />
+      <module name="rpcfx-demo-server" target="1.8" />
       <module name="shardingsphere-datasource-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
